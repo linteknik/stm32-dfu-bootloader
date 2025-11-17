@@ -2,8 +2,10 @@ name: Build firmware images
 run-name: Build FW images for several flavors
 
 on:
+  workflow_dispatch:
   push:
     branches: ["master"]
+    
 
 jobs:
   bootloader-build:
