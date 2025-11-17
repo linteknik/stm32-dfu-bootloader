@@ -21,10 +21,11 @@ jobs:
         run: make
       - name: Upload artifacts
         if: ${{ success() }}
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: stm32-dfu-bootloader.zip
           path: |
             bootloader-dfu-fw.bin
             bootloader-dfu-fw.elf
+          if-no-files-found: error
 
